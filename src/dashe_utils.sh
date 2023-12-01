@@ -68,7 +68,7 @@ colors256() {
 }
 
 get_latest_release() {
-    local response=$(curl -k --silent "https://api.github.com/repos/Gabriel3atista/dashe/releases")
+    local response=$(curl -k --silent "https://api.github.com/repos/sonidolabs/dashe/releases")
     local version=$(echo "$response" | grep -m1 -oP '"tag_name": "\K[^"]+')
     
     if [ -n "$version" ]; then
@@ -92,16 +92,47 @@ dashe_help() {
     printf "$(set_text_style "$yellow" "--set-path-color")              $(set_text_style "$white" "Sets the color of the path.")\n"
     printf "$(set_text_style "$yellow" "--set-symbol-color")            $(set_text_style "$white" "Sets the color of the symbol character.")\n"
     printf "$(set_text_style "$yellow" "--all-colors")                  $(set_text_style "$white" "Renders all available colors.")\n"
+    printf "$(set_text_style "$yellow" "--aliases")                        $(set_text_style "$white" "Show all aliases.")\n\n"
     printf "$(set_text_style "$yellow" "--help")                        $(set_text_style "$white" "Show all helps and commands.")\n\n"
 }
 
+show_aliases() {
+    printf "\n$(set_text_style "$white" "System ————————————————————————————————————")\n"
+    printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
+    printf "$(set_text_style "$yellow" "restart")       $(set_text_style "$white" "source ~/.bashrc")\n"
+    printf "$(set_text_style "$yellow" "ll")            $(set_text_style "$white" "ls -alF")\n"
+    printf "$(set_text_style "$yellow" "la")            $(set_text_style "$white" "ls -A")\n"
+    printf "$(set_text_style "$yellow" "l")             $(set_text_style "$white" "ls -CF")\n"
+    printf "$(set_text_style "$yellow" "rmf")           $(set_text_style "$white" "rm -rf")\n"
+    printf "\n$(set_text_style "$white" "Git ———————————————————————————————————————")\n"
+    printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
+    printf "$(set_text_style "$yellow" "pull")          $(set_text_style "$white" "git pull origin")\n"
+    printf "$(set_text_style "$yellow" "push")          $(set_text_style "$white" "git push origin")\n"
+    printf "$(set_text_style "$yellow" "merge")         $(set_text_style "$white" "git merge")\n"
+    printf "$(set_text_style "$yellow" "add")           $(set_text_style "$white" "git add")\n"
+    printf "$(set_text_style "$yellow" "adda")          $(set_text_style "$white" "git add .")\n"
+    printf "$(set_text_style "$yellow" "commit")        $(set_text_style "$white" "git commit -m")\n"
+    printf "$(set_text_style "$yellow" "ckout")         $(set_text_style "$white" "git checkout")\n"
+    printf "$(set_text_style "$yellow" "nbranch")       $(set_text_style "$white" "git checkout -b")\n"
+    printf "$(set_text_style "$yellow" "dbranch")       $(set_text_style "$white" "git branch -D")\n"
+    printf "$(set_text_style "$yellow" "addro")         $(set_text_style "$white" "git remote add origin")\n"
+    printf "\n$(set_text_style "$white" "Git Flow ——————————————————————————————————")\n"
+    printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
+    printf "$(set_text_style "$yellow" "gffs")          $(set_text_style "$white" "git flow feature start")\n"
+    printf "$(set_text_style "$yellow" "gfhs")          $(set_text_style "$white" "git flow hotfix start")\n"
+    printf "$(set_text_style "$yellow" "gfhp")          $(set_text_style "$white" "git flow hotfix publish")\n"
+    printf "$(set_text_style "$yellow" "gffp")          $(set_text_style "$white" "git flow feature publish")\n"
+    printf "$(set_text_style "$yellow" "gfff")          $(set_text_style "$white" "git flow feature finish")\n"
+    printf "$(set_text_style "$yellow" "gfhf")          $(set_text_style "$white" "git flow hotfix finish")\n\n"
+}
+
 get_aliases_file() {
-    curl -k -s -o $HOME/.dashe/dashe_aliases.sh https://raw.githubusercontent.com/Gabriel3atista/dashe/master/src/dashe_aliases.sh
+    curl -k -s -o $HOME/.dashe/dashe_aliases.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_aliases.sh
 }
 
 success_message() {
     printf "\n$(set_text_style "$white" "Welcome to") $dashe\n"
-    printf "\n$(set_text_style "$white" "If you would like to customize your prompt, please visit") $(set_text_style "$blue" "https://github.com/Gabriel3atista/dashe") $(set_text_style "$white" "for instructions!")\n"
+    printf "\n$(set_text_style "$white" "If you would like to customize your prompt, please visit") $(set_text_style "$blue" "https://github.com/sonidolabs/dashe") $(set_text_style "$white" "for instructions!")\n"
     printf "\n$(set_text_style "$white" "To see all commands, type") $(set_text_style "$yellow" "dashe --help")$(set_text_style "$white" "!")\n"
     printf "\n$(set_text_style "$white" "Hope you enjoy — version") $(set_text_style "$green" "v1.0\n\n")"
 }
@@ -174,6 +205,12 @@ set_bash() {
     prompt_file_script="# Dashe prompt definitions.
         if [ -f $HOME/.dashe/dashe_prompt.sh ]; then
             . $HOME/.dashe/dashe_prompt.sh
+        fi"
+
+    version_verification="# Dashe version verification.
+        if [[ $CURRENT_VERSION != $LATEST_VERSION ]]; then
+            import_dialogs
+            version_dialog
         fi"
 
     set_cli_alias=$(echo "$cli_alias_script" | sed 's/^[ \t]*//')
@@ -257,6 +294,51 @@ set_symbol_color() {
         printf "\n$(set_text_style "$yellow" "$1") $(set_text_style "$white" "is not a valid color.")\n"
         printf "\n$(set_text_style "$white" "To see all color, type") $(set_text_style "$yellow" "dashe --all-colors") $(set_text_style "$white" "command!")\n\n"
     fi
+}
+
+set_alias() {
+    # Check if has two args
+    if [ $# -ne 2 ]; then
+        printf "\n$(set_text_style "$yellow" "Please enter a valid alias and value")\n"
+        printf "\n$(set_text_style "$yellow" "Example:") $(set_text_style "$white" "dashe --set-alias logs \"git log\"")\n\n"
+        return 1
+    fi
+    
+    new_alias="alias $1=\"$2\""
+
+    if [ ! -f $HOME/.dashe/dashe_aliases.sh ]; then
+        touch $HOME/.dashe/dashe_aliases.sh
+    fi
+
+    printf "\n$new_alias" >> $HOME/.dashe/dashe_aliases.sh
+
+    printf "\n$(set_text_style "$white" "Alias") $(set_text_style "$yellow" "$1") $(set_text_style "$white" "created successfully!")\n\n"
+
+    exec bash
+}
+
+replace_alias_name() {
+    local aliases_file="$HOME/.dashe/dashe_aliases.sh"
+
+    if grep -q "^alias $1=" "$aliases_file" 2>/dev/null; then
+        sed -i "s/^alias $1=/alias $2=/" "$aliases_file"
+    else
+        printf "\n$(set_text_style "$white" "Alias") $(set_text_style "$yellow" "$1") $(set_text_style "$white" "not found!")\n\n"
+    fi
+
+    exec bash
+}
+
+replace_alias_value() {
+    local aliases_file="$HOME/.dashe/dashe_aliases.sh"
+
+    if grep -q "^alias $1=" "$aliases_file" 2>/dev/null; then
+        sed -i "s/^alias $1=.*/alias $1=\"$2\"/" "$aliases_file"
+    else
+        printf "\nalias $1=\"$2\"" >> "$aliases_file"
+    fi
+
+    exec bash
 }
 
 if [ -f $HOME/.dashe/version.txt ]; then

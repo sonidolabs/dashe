@@ -29,18 +29,13 @@ Copy, paste, and execute one of the three installation methods in your terminal:
 
 #### cURL
 ```bash
-bash <(curl -k -s https://raw.githubusercontent.com/Gabriel3atista/dashe/master/install.sh)
-```
-
-#### Wget
-```bash
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/Gabriel3atista/dashe/master/install.sh)
+bash <(curl -k -s https://raw.githubusercontent.com/sonidolabs/dashe/master/install.sh)
 ```
 
 #### GIT
 If you prefer, change '~' to your preferred folder
 ```bash
-cd ~ && git clone https://github.com/Gabriel3atista/dashe.git && chmod +x ~/dashe/install.sh && ~/dashe/install.sh
+cd ~ && git clone https://github.com/sonidolabs/dashe.git && chmod +x ~/dashe/install.sh && ~/dashe/install.sh
 ```
 ---
 
@@ -52,20 +47,23 @@ Dashe has a variety of commands to customize the colors of the username, prompt 
 
 ### Commands
 
-| Status                  | Description                             |
-| -----------             | -----------                             |
-| `--version`              | Display current version.               |
-| `--update`               | Update all scripts and files.          |
-| `--uninstall`            | Uninstall Dashe.                       |
-| `--set-username`         | Set the username in the prompt.        |
-| `--set-separator`        | Set a separator in the prompt.         |
-| `--set-symbol`           | Set the symbol character.              |
-| `--set-username-color`   | Set the username color.                |
-| `--set-separator-color`  | Set the separator color.               |
-| `--set-path-color`       | Set the path color.                    |
-| `--set-symbol-color`     | Set the symbol character color.        |
-| `--all-colors`           | Display all available colors.          |
-| `--help`                 | Show all help and commands.            |
+| Command                                               | Description                            |
+| -----------                                           | -----------                            |
+| `--version`                                           | Display current version.               |
+| `--update`                                            | Update all scripts and files.          |
+| `--uninstall`                                         | Uninstall Dashe.                       |
+| `--replace-alias-name <old name> <new name>`          | Replaces an existing alias name.       |
+| `--replace-alias-value <old value> <new value>`       | Replaces an existing alias value.      |
+| `--set-username <username>`                           | Set the username in the prompt.        |
+| `--set-alias <alias> <command>`                       | Set a new alias.                       |
+| `--set-separator <separator>`                         | Set a separator in the prompt.         |
+| `--set-symbol <symbol>`                               | Set the symbol character.              |
+| `--set-username-color <color>`                        | Set the username color.                |
+| `--set-separator-color <color>`                       | Set the separator color.               |
+| `--set-path-color <color>`                            | Set the path color.                    |
+| `--set-symbol-color <color>`                          | Set the symbol character color.        |
+| `--all-colors`                                        | Display all available colors.          |
+| `--help`                                              | Show all help and commands.            |
 
 #### Usage Examples
 
@@ -125,9 +123,9 @@ Within a directory with an active GIT repository, you can track the state of cha
 
 ### Support and Contribution
 
-If you encounter any issues or have suggestions for improvements, feel free to open an [issue](https://github.com/Gabriel3atista/dashe/issues) on the GitHub repository.
+If you encounter any issues or have suggestions for improvements, feel free to open an [issue](https://github.com/sonidolabs/dashe/issues) on the GitHub repository.
 
-If you want to contribute, please open a [pull request](https://github.com/Gabriel3atista/dashe/pulls) in the repository.
+If you want to contribute, please open a [pull request](https://github.com/sonidolabs/dashe/pulls) in the repository.
 
 ---
 

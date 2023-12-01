@@ -47,7 +47,7 @@ uninstall_dialog() {
                 rm -rf $HOME/.dashe
                 clear
                 printf "\n$(set_text_style "$white" "See you next time...")\n"
-                printf "\n$(set_text_style "$white" "Feel free to help and") $(set_text_style "$yellow" "★ star") $(set_text_style "$white" "us on github (")$(set_text_style "$blue" "https://github.com/Gabriel3atista/dashe")$(set_text_style "$white" ")")\n\n"
+                printf "\n$(set_text_style "$white" "Feel free to help and") $(set_text_style "$yellow" "★ star") $(set_text_style "$white" "us on github (")$(set_text_style "$blue" "https://github.com/sonidolabs/dashe")$(set_text_style "$white" ")")\n\n"
                 exec bash
                 x=1
                 ;;
@@ -65,7 +65,7 @@ uninstall_dialog() {
 version_dialog() {
     printf "\n$dashe $(set_text_style "$white" "version — $CURRENT_VERSION")\n"
     printf "\n$(set_text_style "$yellow" "Notice")\n"
-    printf "\n$(set_text_style "$white" "It looks like there is an update available!")"
+    printf "\n$(set_text_style "$white" "It looks like") $dashe $(set_text_style "$white" "has an update available!")"
     printf "\n$(set_text_style "$white" "Latest version:") $(set_text_style "$green" "$LATEST_VERSION")\n"
     x=0
     while [ $x = 0 ] 

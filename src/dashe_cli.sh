@@ -9,6 +9,7 @@ declare -A commands
 commands["--version"]=show_version
 commands["--update"]=update
 commands["--uninstall"]=uninstall
+commands["--aliases"]=show_aliases
 commands["--help"]=dashe_help
 commands["--set-username"]=set_username
 commands["--set-username-color"]=set_username_color
