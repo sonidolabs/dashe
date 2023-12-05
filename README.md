@@ -18,8 +18,7 @@ Dashe is a CLI script that makes it easy to customize your prompt according to y
 
 `Bash` - Version 5.0.17 or newer <br>
 `GIT` - Version 2.25.1 or newer <br>
-`cURL` - Version 7.68.0 or newer <br>
-`Wget` - Version 1.20.3 or newer
+`cURL` - Version 7.68.0 or newer
 
 ---
 
