@@ -18,8 +18,7 @@ Dashe é um script CLI que torna fácil personalizar o seu prompt de acordo com 
 
 `Bash` - Versão 5.0.17 ou mais recente <br>
 `GIT` - Versão 2.25.1 ou mais recente <br>
-`curl` - Versão 7.68.0 ou mais recente <br>
-`Wget` - Versão 1.20.3 ou mais recente
+`curl` - Versão 7.68.0 ou mais recente
 
 ---
 
