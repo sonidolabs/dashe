@@ -128,6 +128,12 @@ If you want to contribute, please open a [pull request](https://github.com/sonid
 
 ---
 
+### Next steps
+
+Migrate the codebase to AWS.
+
+---
+
 ### License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
