@@ -20,12 +20,12 @@ is_number() {
 }
 
 update() {
-    import_colors
-    import_dialogs
-    import_utils
-    import_cli
-    import_aliases
-    import_prompt
+    curl -k -s -o $HOME/.dashe/dashe_colors.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_colors.sh
+    curl -k -s -o $HOME/.dashe/dashe_aliases.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_aliases.sh
+    curl -k -s -o $HOME/.dashe/dashe_cli.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_cli.sh
+    curl -k -s -o $HOME/.dashe/dashe_dialogs.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_dialogs.sh
+    curl -k -s -o $HOME/.dashe/dashe_prompt.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_prompt.sh
+    curl -k -s -o $HOME/.dashe/dashe_utils.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_utils.sh
 
     if [[ $CURRENT_VERSION != $LATEST_VERSION ]]; then
         echo $LATEST_VERSION > $HOME/.dashe/version.txt
@@ -98,8 +98,6 @@ dashe_help() {
     printf "$(set_text_style "$yellow" "--all-colors")                                      $(set_text_style "$white" "Renders all available colors.")\n"
     printf "$(set_text_style "$yellow" "--aliases")                                         $(set_text_style "$white" "Show all aliases.")\n\n"
 }
-
-dashe_help
 
 show_aliases() {
     printf "\n$(set_text_style "$white" "System ————————————————————————————————————")\n"
