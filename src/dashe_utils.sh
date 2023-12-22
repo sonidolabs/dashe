@@ -79,22 +79,27 @@ get_latest_release() {
 }
 
 dashe_help() {
-    printf "\n$(set_text_style "$green" "Command")                       $(set_text_style "$green" "Description")\n"
-    printf "\n$(set_text_style "$yellow" "--version")                     $(set_text_style "$white" "Show current version.")\n"
-    printf "$(set_text_style "$yellow" "--update")                      $(set_text_style "$white" "Update all scripts and files.")\n"
-    printf "$(set_text_style "$yellow" "--uninstall")                   $(set_text_style "$white" "Uninstall the Dashe.")\n"
-    printf "$(set_text_style "$yellow" "--set-username")                $(set_text_style "$white" "Sets the prompt username.")\n"
-    printf "$(set_text_style "$yellow" "--set-separator")               $(set_text_style "$white" "Sets the prompt user separator.")\n"
-    printf "$(set_text_style "$yellow" "--set-path")                    $(set_text_style "$white" "Defines the folder path.")\n"
-    printf "$(set_text_style "$yellow" "--set-symbol")                  $(set_text_style "$white" "Defines the symbol character.")\n"
-    printf "$(set_text_style "$yellow" "--set-username-color")          $(set_text_style "$white" "Sets the color of the username.")\n"
-    printf "$(set_text_style "$yellow" "--set-separator-color")         $(set_text_style "$white" "Sets the color of the separator.")\n"
-    printf "$(set_text_style "$yellow" "--set-path-color")              $(set_text_style "$white" "Sets the color of the path.")\n"
-    printf "$(set_text_style "$yellow" "--set-symbol-color")            $(set_text_style "$white" "Sets the color of the symbol character.")\n"
-    printf "$(set_text_style "$yellow" "--all-colors")                  $(set_text_style "$white" "Renders all available colors.")\n"
-    printf "$(set_text_style "$yellow" "--aliases")                        $(set_text_style "$white" "Show all aliases.")\n\n"
-    printf "$(set_text_style "$yellow" "--help")                        $(set_text_style "$white" "Show all helps and commands.")\n\n"
+    printf "\n$(set_text_style "$green" "Command")                                           $(set_text_style "$green" "Description")\n"
+    printf "\n$(set_text_style "$yellow" "--help")                                            $(set_text_style "$white" "Show all helps and commands.")\n"
+    printf "$(set_text_style "$yellow" "--version")                                         $(set_text_style "$white" "Show current version.")\n"
+    printf "$(set_text_style "$yellow" "--update")                                          $(set_text_style "$white" "Update all scripts and files.")\n"
+    printf "$(set_text_style "$yellow" "--uninstall")                                       $(set_text_style "$white" "Uninstall the Dashe.")\n"
+    printf "$(set_text_style "$yellow" "--replace-alias-name <old name> <new name>")        $(set_text_style "$white" "Replaces an existing alias name.")\n"
+    printf "$(set_text_style "$yellow" "--replace-alias-value <old value> <new value>")     $(set_text_style "$white" "Replaces an existing alias value.")\n"
+    printf "$(set_text_style "$yellow" "--set-username <username>")                         $(set_text_style "$white" "Sets the prompt username.")\n"
+    printf "$(set_text_style "$yellow" "--set-alias <alias> <command>")                     $(set_text_style "$white" "Set a new alias.")\n"
+    printf "$(set_text_style "$yellow" "--set-separator <separator>")                       $(set_text_style "$white" "Sets the prompt user separator.")\n"
+    printf "$(set_text_style "$yellow" "--set-path")                                        $(set_text_style "$white" "Defines the folder path.")\n"
+    printf "$(set_text_style "$yellow" "--set-symbol <symbol>")                             $(set_text_style "$white" "Defines the symbol character.")\n"
+    printf "$(set_text_style "$yellow" "--set-username-color <color>")                      $(set_text_style "$white" "Sets the color of the username.")\n"
+    printf "$(set_text_style "$yellow" "--set-separator-color <color>")                     $(set_text_style "$white" "Sets the color of the separator.")\n"
+    printf "$(set_text_style "$yellow" "--set-path-color <color>")                          $(set_text_style "$white" "Sets the color of the path.")\n"
+    printf "$(set_text_style "$yellow" "--set-symbol-color <color>")                        $(set_text_style "$white" "Sets the color of the symbol character.")\n"
+    printf "$(set_text_style "$yellow" "--all-colors")                                      $(set_text_style "$white" "Renders all available colors.")\n"
+    printf "$(set_text_style "$yellow" "--aliases")                                         $(set_text_style "$white" "Show all aliases.")\n\n"
 }
+
+dashe_help
 
 show_aliases() {
     printf "\n$(set_text_style "$white" "System ————————————————————————————————————")\n"
