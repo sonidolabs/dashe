@@ -132,7 +132,8 @@ Se você deseja contribuir, por favor abra uma [pull request](https://github.com
 
 ### Próximos passos
 
-Migrar a base de código para a AWS.
+- Migrar a base de código para a AWS.
+- Criar sistema de login e salvar configurações do usuário.
 
 ---
 
