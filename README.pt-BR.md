@@ -8,11 +8,12 @@
   <a href="#suporte-e-contribuição">Contribuições</a>
 </div>
 
-## Dashe - Tornando fácil a customização do seu prompt
+<br>
+
+![Dashe banner](/src/imgs/dashe_cover_pt.png)
+
 
 Translation: [English](./README.md)
-
-Dashe é um script CLI que torna fácil personalizar o seu prompt de acordo com o seu estilo!
 
 ### Pré Requisitos
 
