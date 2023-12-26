@@ -130,6 +130,12 @@ Se você deseja contribuir, por favor abra uma [pull request](https://github.com
 
 ---
 
+### Próximos passos
+
+Migrar a base de código para a AWS.
+
+---
+
 ### Licença
 
 Este projeto está licenciada sob a [Licença MIT](https://opensource.org/licenses/MIT).
