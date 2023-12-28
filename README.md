@@ -131,7 +131,7 @@ If you want to contribute, please open a [pull request](https://github.com/sonid
 
 ### Next steps
 
-- Migrate the codebase to AWS.
+- Config AWS deployment.
 - Create login system and save user configs.
 
 ---
