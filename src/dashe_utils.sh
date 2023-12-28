@@ -20,12 +20,12 @@ is_number() {
 }
 
 update() {
-    curl -k -s -o $HOME/.dashe/dashe_colors.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_colors.sh
-    curl -k -s -o $HOME/.dashe/dashe_aliases.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_aliases.sh
-    curl -k -s -o $HOME/.dashe/dashe_cli.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_cli.sh
-    curl -k -s -o $HOME/.dashe/dashe_dialogs.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_dialogs.sh
-    curl -k -s -o $HOME/.dashe/dashe_prompt.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_prompt.sh
-    curl -k -s -o $HOME/.dashe/dashe_utils.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_utils.sh
+    curl -k -s -o $HOME/.dashe/dashe_colors.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_colors.sh
+    curl -k -s -o $HOME/.dashe/dashe_aliases.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_aliases.sh
+    curl -k -s -o $HOME/.dashe/dashe_cli.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_cli.sh
+    curl -k -s -o $HOME/.dashe/dashe_dialogs.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_dialogs.sh
+    curl -k -s -o $HOME/.dashe/dashe_prompt.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_prompt.sh
+    curl -k -s -o $HOME/.dashe/dashe_utils.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_utils.sh
 
     if [[ $CURRENT_VERSION != $LATEST_VERSION ]]; then
         echo $LATEST_VERSION > $HOME/.dashe/version.txt
@@ -68,10 +68,9 @@ colors256() {
 }
 
 get_latest_release() {
-    local response=$(curl -k --silent "https://api.github.com/repos/sonidolabs/dashe/releases")
-    local version=$(echo "$response" | grep -m1 -oP '"tag_name": "\K[^"]+')
+    local version=$(curl -k --silent "https://d7uyonffhkqkw.cloudfront.net/dashe/version.txt")
     
-    if [ -n "$version" ]; then
+    if [[ "$version" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
         echo "$version"
     else
         echo -e "$(set_text_style "$red" "Failed to retrieve the latest version.")"
@@ -100,14 +99,14 @@ dashe_help() {
 }
 
 show_aliases() {
-    printf "\n$(set_text_style "$white" "System ————————————————————————————————————")\n"
+    printf "\n$(set_text_style "$white" "System ------------------------------------")\n"
     printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
     printf "$(set_text_style "$yellow" "restart")       $(set_text_style "$white" "source ~/.bashrc")\n"
     printf "$(set_text_style "$yellow" "ll")            $(set_text_style "$white" "ls -alF")\n"
     printf "$(set_text_style "$yellow" "la")            $(set_text_style "$white" "ls -A")\n"
     printf "$(set_text_style "$yellow" "l")             $(set_text_style "$white" "ls -CF")\n"
     printf "$(set_text_style "$yellow" "rmf")           $(set_text_style "$white" "rm -rf")\n"
-    printf "\n$(set_text_style "$white" "Git ———————————————————————————————————————")\n"
+    printf "\n$(set_text_style "$white" "Git ---------------------------------------")\n"
     printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
     printf "$(set_text_style "$yellow" "pull")          $(set_text_style "$white" "git pull origin")\n"
     printf "$(set_text_style "$yellow" "push")          $(set_text_style "$white" "git push origin")\n"
@@ -119,7 +118,7 @@ show_aliases() {
     printf "$(set_text_style "$yellow" "nbranch")       $(set_text_style "$white" "git checkout -b")\n"
     printf "$(set_text_style "$yellow" "dbranch")       $(set_text_style "$white" "git branch -D")\n"
     printf "$(set_text_style "$yellow" "addro")         $(set_text_style "$white" "git remote add origin")\n"
-    printf "\n$(set_text_style "$white" "Git Flow ——————————————————————————————————")\n"
+    printf "\n$(set_text_style "$white" "Git Flow ----------------------------------")\n"
     printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
     printf "$(set_text_style "$yellow" "gffs")          $(set_text_style "$white" "git flow feature start")\n"
     printf "$(set_text_style "$yellow" "gfhs")          $(set_text_style "$white" "git flow hotfix start")\n"
@@ -127,17 +126,15 @@ show_aliases() {
     printf "$(set_text_style "$yellow" "gffp")          $(set_text_style "$white" "git flow feature publish")\n"
     printf "$(set_text_style "$yellow" "gfff")          $(set_text_style "$white" "git flow feature finish")\n"
     printf "$(set_text_style "$yellow" "gfhf")          $(set_text_style "$white" "git flow hotfix finish")\n\n"
-}
-
-get_aliases_file() {
-    curl -k -s -o $HOME/.dashe/dashe_aliases.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_aliases.sh
+    printf "\n$(set_text_style "$white" "Custom ----------------------------------")\n"
+    printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
 }
 
 success_message() {
     printf "\n$(set_text_style "$white" "Welcome to") $dashe\n"
     printf "\n$(set_text_style "$white" "If you would like to customize your prompt, please visit") $(set_text_style "$blue" "https://github.com/sonidolabs/dashe") $(set_text_style "$white" "for instructions!")\n"
     printf "\n$(set_text_style "$white" "To see all commands, type") $(set_text_style "$yellow" "dashe --help")$(set_text_style "$white" "!")\n"
-    printf "\n$(set_text_style "$white" "Hope you enjoy — version") $(set_text_style "$green" "v1.0\n\n")"
+    printf "\n$(set_text_style "$white" "Hope you enjoy - version") $(set_text_style "$green" "$(get_latest_release)\n\n")"
 }
 
 get_git_branch() {
@@ -196,7 +193,7 @@ set_aliases() {
             echo "$set_aliases_file" >> $HOME/.bashrc
         fi
 
-        get_aliases_file
+        import_aliases
         
     fi
 }
