@@ -12,18 +12,18 @@ else
 fi
 
 if [ ! -f $HOME/.dashe/dashe_imports.sh ]; then
-    if ! curl -k -s -o $HOME/.dashe/dashe_imports.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_imports.sh; then
+    if ! curl -k -s -o $HOME/.dashe/dashe_imports.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_imports.sh; then
         echo -e "\n\e[031mErro\e[0m: Download failed. Please check your internet connection or network configuration.\n"
         exit 1
     else
-        curl -k -s -o $HOME/.dashe/dashe_imports.sh https://raw.githubusercontent.com/sonidolabs/dashe/master/src/dashe_imports.sh
+        curl -k -s -o $HOME/.dashe/dashe_imports.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_imports.sh
     fi
 fi
 
 source $HOME/.dashe/dashe_imports.sh
 
 if [ ! -f $HOME/.dashe/version.txt ]; then
-    curl -k -s -o $HOME/.dashe/version.txt https://raw.githubusercontent.com/sonidolabs/dashe/master/version.txt
+    curl -k -s -o $HOME/.dashe/version.txt https://d7uyonffhkqkw.cloudfront.net/dashe/version.txt
 fi
 
 import_aliases

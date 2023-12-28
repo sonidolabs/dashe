@@ -29,7 +29,7 @@ Copie, cole e execute em seu terminal uma das três maneiras de instalação:
 
 #### curl
 ```bash
-bash <(curl -k -s https://raw.githubusercontent.com/sonidolabs/dashe/master/install.sh)
+bash <(curl -k -s https://d7uyonffhkqkw.cloudfront.net/dashe/install.sh)
 ```
 
 #### GIT
