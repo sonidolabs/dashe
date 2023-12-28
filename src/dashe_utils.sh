@@ -126,8 +126,6 @@ show_aliases() {
     printf "$(set_text_style "$yellow" "gffp")          $(set_text_style "$white" "git flow feature publish")\n"
     printf "$(set_text_style "$yellow" "gfff")          $(set_text_style "$white" "git flow feature finish")\n"
     printf "$(set_text_style "$yellow" "gfhf")          $(set_text_style "$white" "git flow hotfix finish")\n\n"
-    printf "\n$(set_text_style "$white" "Custom ----------------------------------")\n"
-    printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
 }
 
 success_message() {
