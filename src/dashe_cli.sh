@@ -11,6 +11,7 @@ commands["--update"]=update
 commands["--uninstall"]=uninstall
 commands["--aliases"]=show_aliases
 commands["--help"]=dashe_help
+commands["--set-alias"]=set_aliases
 commands["--set-username"]=set_username
 commands["--set-username-color"]=set_username_color
 commands["--set-separator"]=set_separator
@@ -19,6 +20,8 @@ commands["--set-path"]=set_path
 commands["--set-path-color"]=set_path_color
 commands["--set-symbol"]=set_symbol
 commands["--set-symbol-color"]=set_symbol_color
+commands["--replace-alias-name"]=replace_alias_name
+commands["--replace-alias-value"]=replace_alias_value
 commands["--all-colors"]=colors256
 
 dashe() {
