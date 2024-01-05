@@ -93,33 +93,35 @@ dashe_help() {
 }
 
 show_aliases() {
-    printf "\n$(set_text_style "$white" "System ------------------------------------")\n"
-    printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
-    printf "$(set_text_style "$yellow" "restart")       $(set_text_style "$white" "source ~/.bashrc")\n"
-    printf "$(set_text_style "$yellow" "ll")            $(set_text_style "$white" "ls -alF")\n"
-    printf "$(set_text_style "$yellow" "la")            $(set_text_style "$white" "ls -A")\n"
-    printf "$(set_text_style "$yellow" "l")             $(set_text_style "$white" "ls -CF")\n"
-    printf "$(set_text_style "$yellow" "rmf")           $(set_text_style "$white" "rm -rf")\n"
-    printf "\n$(set_text_style "$white" "Git ---------------------------------------")\n"
-    printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
-    printf "$(set_text_style "$yellow" "pull")          $(set_text_style "$white" "git pull origin")\n"
-    printf "$(set_text_style "$yellow" "push")          $(set_text_style "$white" "git push origin")\n"
-    printf "$(set_text_style "$yellow" "merge")         $(set_text_style "$white" "git merge")\n"
-    printf "$(set_text_style "$yellow" "add")           $(set_text_style "$white" "git add")\n"
-    printf "$(set_text_style "$yellow" "adda")          $(set_text_style "$white" "git add .")\n"
-    printf "$(set_text_style "$yellow" "commit")        $(set_text_style "$white" "git commit -m")\n"
-    printf "$(set_text_style "$yellow" "ckout")         $(set_text_style "$white" "git checkout")\n"
-    printf "$(set_text_style "$yellow" "nbranch")       $(set_text_style "$white" "git checkout -b")\n"
-    printf "$(set_text_style "$yellow" "dbranch")       $(set_text_style "$white" "git branch -D")\n"
-    printf "$(set_text_style "$yellow" "addro")         $(set_text_style "$white" "git remote add origin")\n"
-    printf "\n$(set_text_style "$white" "Git Flow ----------------------------------")\n"
-    printf "\n$(set_text_style "$green" "Alias")         $(set_text_style "$green" "Command")\n"
-    printf "$(set_text_style "$yellow" "gffs")          $(set_text_style "$white" "git flow feature start")\n"
-    printf "$(set_text_style "$yellow" "gfhs")          $(set_text_style "$white" "git flow hotfix start")\n"
-    printf "$(set_text_style "$yellow" "gfhp")          $(set_text_style "$white" "git flow hotfix publish")\n"
-    printf "$(set_text_style "$yellow" "gffp")          $(set_text_style "$white" "git flow feature publish")\n"
-    printf "$(set_text_style "$yellow" "gfff")          $(set_text_style "$white" "git flow feature finish")\n"
-    printf "$(set_text_style "$yellow" "gfhf")          $(set_text_style "$white" "git flow hotfix finish")\n\n"
+echo
+printf "$(set_text_style "$gray" "# System")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "restart") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'source ~/.bashrc'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "ll") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'ls -alF'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "la") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'ls -A'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "l") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'ls -CF'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "rmf") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'rm -rf'")\n"
+echo
+printf "$(set_text_style "$gray" "# Git")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "pull") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git pull origin'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "push") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git push origin'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "merge") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git merge'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "add") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git add'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "adda") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git add .'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "commit") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git commit -m'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "ckout") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git checkout'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "nbranch") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git checkout -b'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "dbranch") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git branch -D'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "addro") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git remote add origin'")\n"
+echo
+printf "$(set_text_style "$gray" "# Git flow")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "gffs") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git flow feature start'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "gfhs") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git flow hotfix start'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "gfhp") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git flow hotfix publish'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "gffp") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git flow feature publish'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "gfff") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git flow feature finish'")\n"
+printf "$(set_text_style "$red" "alias") $(set_text_style "$lilac_2" "gfhf") $(set_text_style "$red" "=") $(set_text_style "$yellow" "'git flow hotfix finish'")\n"
+echo
+printf "$(set_text_style "$gray" "# Custom")\n"
 }
 
 success_message() {
@@ -289,46 +291,76 @@ set_symbol_color() {
 }
 
 set_alias() {
+    local aliases_file="$HOME/.dashe/dashe_aliases.sh"
+    local utils_file="$HOME/.dashe/dashe_utils.sh"
+
     # Check if has two args
-    if [ $# -ne 2 ]; then
+    if [[ $# -ne 2 || -z "$1" || -z "$2" ]]; then
         printf "\n$(set_text_style "$yellow" "Please enter a valid alias and value")\n"
         printf "\n$(set_text_style "$yellow" "Example:") $(set_text_style "$white" "dashe --set-alias logs \"git log\"")\n\n"
         return 1
     fi
     
-    new_alias="alias $1=\"$2\""
-
     if [ ! -f $HOME/.dashe/dashe_aliases.sh ]; then
         touch $HOME/.dashe/dashe_aliases.sh
     fi
 
-    printf "\n$new_alias" >> $HOME/.dashe/dashe_aliases.sh
+    if grep -q "alias $1=" "$aliases_file" 2>/dev/null; then
+        printf "\n$(set_text_style "$yellow" "Warning")\n"
+        printf "\n$(set_text_style "$white" "Alias") $(set_text_style "$yellow" "'$1'") $(set_text_style "$white" "already exists")\n\n"
+        return 1
+    fi
 
-    printf "\n$(set_text_style "$white" "Alias") $(set_text_style "$yellow" "$1") $(set_text_style "$white" "created successfully!")\n\n"
+    # Add the new line command to show_aliases function
+    sed -i "/^show_aliases() {/,/^}/ {/^}/i\
+        printf \"\$(set_text_style \"\$red\" \"alias\") \$(set_text_style \"\$lilac_2\" \"$1\") \$(set_text_style \"\$red\" \"=\") \$(set_text_style \"\$yellow\" \"\'$2\'\")\\\\n\"
+    }" "$utils_file"
+
+    new_alias="alias $1=\"$2\""
+    printf "\n$new_alias" >> $HOME/.dashe/dashe_aliases.sh
+    printf "\n$(set_text_style "$green" "Success")\n"
+    printf "\n$(set_text_style "$white" "Alias") $(set_text_style "$yellow" "'$1'") $(set_text_style "$white" "has been created")\n\n"
 
     exec bash
 }
 
 replace_alias_name() {
     local aliases_file="$HOME/.dashe/dashe_aliases.sh"
+    local utils_file="$HOME/.dashe/dashe_utils.sh"
 
-    if grep -q "^alias $1=" "$aliases_file" 2>/dev/null; then
-        sed -i "s/^alias $1=/alias $2=/" "$aliases_file"
-    else
-        printf "\n$(set_text_style "$white" "Alias") $(set_text_style "$yellow" "$1") $(set_text_style "$white" "not found!")\n\n"
+    if grep -q "alias $2=" "$aliases_file" 2>/dev/null; then
+        printf "\n$(set_text_style "$yellow" "Warning")\n"
+        printf "\n$(set_text_style "$white" "Alias") $(set_text_style "$yellow" "'$2'") $(set_text_style "$white" "already exists")\n\n"
+        return 1
     fi
 
+    if ! grep -q "^alias $1=" "$aliases_file" 2>/dev/null; then
+        printf "\n$(set_text_style "$red" "Failed")\n"
+        printf "\n$(set_text_style "$white" "Alias") $(set_text_style "$yellow" "'$1'") $(set_text_style "$white" "not found")\n\n"
+        return 1
+    fi
+
+    sed -i "s/\"\$lilac_2\" \"$1\"/\"\$lilac_2\" \"$2\"/g" "$utils_file"
+    sed -i "s/^alias $1=/alias $2=/" "$aliases_file"
+    printf "\n$(set_text_style "$green" "Success")\n"
+    printf "\n$(set_text_style "$white" "Alias") $(set_text_style "$yellow" "'$1'") $(set_text_style "$white" "has been changed to") $(set_text_style "$yellow" "'$2'")\n\n"
     exec bash
 }
 
 replace_alias_value() {
     local aliases_file="$HOME/.dashe/dashe_aliases.sh"
+    local utils_file="$HOME/.dashe/dashe_utils.sh"
 
-    if grep -q "^alias $1=" "$aliases_file" 2>/dev/null; then
-        sed -i "s/^alias $1=.*/alias $1=\"$2\"/" "$aliases_file"
-    else
-        printf "\nalias $1=\"$2\"" >> "$aliases_file"
+    if ! grep -q "\"$1\"" "$aliases_file" 2>/dev/null; then
+        printf "\n$(set_text_style "$red" "Failed")\n"
+        printf "\n$(set_text_style "$white" "Alias value") $(set_text_style "$yellow" "'$1'") $(set_text_style "$white" "not found")\n\n"
+        return 1
     fi
+
+    sed -i "s/\"\$yellow\" \"'$1'\"/\"\$yellow\" \"'$2'\"/g" "$utils_file"
+    sed -i "s/"\"$1\""/"\"$2\""/g" "$aliases_file"
+    printf "\n$(set_text_style "$green" "Success")\n"
+    printf "\n$(set_text_style "$white" "Alias value") $(set_text_style "$yellow" "'$1'") $(set_text_style "$white" "has been changed to") $(set_text_style "$yellow" "'$2'")\n\n"
 
     exec bash
 }

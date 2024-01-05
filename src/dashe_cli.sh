@@ -27,7 +27,7 @@ commands["--all-colors"]=colors256
 dashe() {
     if [ $# -ge 0 ]; then
         if [[ -v commands["$1"] ]]; then
-            ${commands["$1"]} "$2"
+            ${commands["$1"]} "$2" "$3"
             exec bash
         else
             printf "\n$(set_text_style "$yellow" "Please enter a valid command")\n"
