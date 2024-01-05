@@ -27,14 +27,8 @@ update() {
     curl -k -s -o $HOME/.dashe/dashe_prompt.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_prompt.sh
     curl -k -s -o $HOME/.dashe/dashe_utils.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_utils.sh
 
-    if [[ $CURRENT_VERSION != $LATEST_VERSION ]]; then
-        echo $LATEST_VERSION > $HOME/.dashe/version.txt
-        printf "\n$(set_text_style "$white" "Your") $dashe $(set_text_style "$white" "has been updated!")\n"
-        printf "\n$(set_text_style "$white" "Current version:") $(set_text_style "$green" "$LATEST_VERSION")\n\n"
-    else
-        printf "\n$(set_text_style "$white" "You are updated!")\n"
-        printf "\n$dashe $(set_text_style "$white" "version —") $(set_text_style "$green" "$LATEST_VERSION")\n\n"
-    fi
+    printf "\n$(set_text_style "$white" "Your") $dashe $(set_text_style "$white" "has been updated!")\n"
+    printf "\n$(set_text_style "$white" "Current version:") $(set_text_style "$green" "$LATEST_VERSION")\n\n"
 }
 
 uninstall() {
