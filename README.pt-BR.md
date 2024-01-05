@@ -54,11 +54,11 @@ O Dashe tem uma série de comandos para personalizar as cores do nome de usuári
 | `--update`                                            | Atualizar todos os scripts e arquivos.    |
 | `--uninstall`                                         | Desinstalar o Dashe.                      |
 | `--replace-alias-name <old name> <new name>`          | Substituir um nome de alias existente.    |
-| `--replace-alias-value <old value> <new value>`       | Substituir um valor de alias existente.   |
-| `--set-username <username>`                           | Definir o nome de usuário no prompt.      |
-| `--set-alias <alias> <command>`                       | Definir um novo alias.                    |
-| `--set-separator <separator>`                         | Definir um separador no prompt.           |
-| `--set-symbol <symbol>`                               | Definir o caractere do símbolo.           |
+| `--replace-alias-value "<old value>" "<new value>"`       | Substituir um valor de alias existente.   |
+| `--set-username "<username>"`                           | Definir o nome de usuário no prompt.      |
+| `--set-alias <alias> "<command>"`                       | Definir um novo alias.                    |
+| `--set-separator "<separator>"`                         | Definir um separador no prompt.           |
+| `--set-symbol "<symbol>"`                               | Definir o caractere do símbolo.           |
 | `--set-username-color <color>`                        | Definir a cor do nome de usuário.         |
 | `--set-separator-color <color>`                       | Definir a cor do separador.               |
 | `--set-path-color <color>`                            | Definir a cor do caminho.                 |
