@@ -117,7 +117,7 @@ Within a directory with an active GIT repository, you can track the state of cha
 
 <br>
 
-> Branch colors cannot be changed!
+> Branch colors cannot be changed! (Yet)
 
 ---
 
