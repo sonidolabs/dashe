@@ -118,7 +118,7 @@ Dentro de um diretório com um repositório GIT ativo, você pode acompanhar o e
 
 <br>
 
-> Não é possível alterar as cores das branches!
+> Não é possível alterar as cores das branches! (Ainda)
 
 ---
 
