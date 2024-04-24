@@ -156,7 +156,7 @@ get_git_branch() {
                 printf "($current_branch \[$yellow\]●\[$tput_reset\]) "
                 return
             # check if have files to push
-            elif [[ -n $(git log --branches --not --remotes) ]]; then
+            elif [[ $(git rev-list HEAD --not --remotes --count) -gt 0 ]]; then
                 printf "($current_branch \[$green\]●\[$tput_reset\]) "
                 return
             # nothing to commit
