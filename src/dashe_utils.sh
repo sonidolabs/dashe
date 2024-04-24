@@ -25,7 +25,6 @@ update() {
     curl -k -s -o $HOME/.dashe/dashe_aliases.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_aliases.sh
     curl -k -s -o $HOME/.dashe/dashe_cli.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_cli.sh
     curl -k -s -o $HOME/.dashe/dashe_dialogs.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_dialogs.sh
-    curl -k -s -o $HOME/.dashe/dashe_prompt.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_prompt.sh
     curl -k -s -o $HOME/.dashe/dashe_utils.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_utils.sh
 
     printf "\n$(set_text_style "$white" "Your") $dashe $(set_text_style "$white" "has been updated!")\n"
