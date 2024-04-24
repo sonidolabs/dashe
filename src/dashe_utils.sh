@@ -20,6 +20,7 @@ is_number() {
 }
 
 update() {
+    curl -k -s -o $HOME/.dashe/version.txt https://d7uyonffhkqkw.cloudfront.net/dashe/version.txt
     curl -k -s -o $HOME/.dashe/dashe_colors.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_colors.sh
     curl -k -s -o $HOME/.dashe/dashe_aliases.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_aliases.sh
     curl -k -s -o $HOME/.dashe/dashe_cli.sh https://d7uyonffhkqkw.cloudfront.net/dashe/src/dashe_cli.sh
